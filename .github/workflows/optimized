@@ -1,0 +1,28 @@
+name: deploy-react-project
+
+on:
+  push:
+    branches: main
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Get repository code"
+        uses: actions/checkout@v4
+
+      - name: "Installing dependencies"
+        run: npm install
+
+      - name: "Test Application"
+        run: npm run test
+
+      - name: "Lint Application"
+        run: npm run lint
+
+      - name: "Building Application"
+        run: npm run build
+
+      - name: "Deploying application"
+        run: echo "Deploying..."
