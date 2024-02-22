@@ -1,0 +1,17 @@
+name: Testing-react-project
+
+on:
+  push:
+    branches: main
+
+jobs:
+  testing-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Get repository code"
+        uses: actions/checkout@v4
+      - name: "Installing dependencies"
+        run: npm install
+      - name: "Test Application"
+        run: npm run test
